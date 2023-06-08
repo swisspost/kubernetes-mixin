@@ -12,6 +12,8 @@
     kubeApiserverReadNamespaceLatency: '5',
     kubeApiserverReadClusterLatency: '30',
     kubeApiserverWriteLatency: '1',
+    vmTenant: '0',
+
   },
 
   prometheusRules+:: {
@@ -24,6 +26,7 @@
     groups+: [
       {
         name: 'kube-apiserver-burnrate.rules',
+        tenant: $._config.vmTenant,
         rules: [
           {
             record: 'apiserver_request:burnrate%(window)s' % w,
@@ -111,6 +114,7 @@
       },
       {
         name: 'kube-apiserver-histogram.rules',
+        tenant: $._config.vmTenant,
         rules:
           [
             {
@@ -128,6 +132,7 @@
       },
       {
         name: 'kube-apiserver-availability.rules',
+        tenant: $._config.vmTenant,
         interval: '3m',
         rules: [
           {

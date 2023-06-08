@@ -2,12 +2,14 @@
   _config+:: {
     cadvisorSelector: 'job="cadvisor"',
     kubeStateMetricsSelector: 'job="kube-state-metrics"',
+    vmTenant: '0',
   },
 
   prometheusRules+:: {
     groups+: [
       {
         name: 'k8s.rules',
+        tenant: $._config.vmTenant,
         rules: [
           {
             // Reduces cardinality of this timeseries by #cores, which makes it

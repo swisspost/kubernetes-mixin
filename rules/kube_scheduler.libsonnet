@@ -2,12 +2,14 @@
   _config+:: {
     kubeSchedulerSelector: 'job="kube-scheduler"',
     podLabel: 'pod',
+    vmTenant: '0',
   },
 
   prometheusRules+:: {
     groups+: [
       {
         name: 'kube-scheduler.rules',
+        tenant: $._config.vmTenant,
         rules: [
           {
             record: 'cluster_quantile:%s:histogram_quantile' % metric,

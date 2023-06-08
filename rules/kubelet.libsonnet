@@ -1,12 +1,14 @@
 {
   _config+:: {
     kubeletSelector: 'job="kubelet"',
+    vmTenant: '0',
   },
 
   prometheusRules+:: {
     groups+: [
       {
         name: 'kubelet.rules',
+        tenant: $._config.vmTenant,
         rules: [
           {
             record: 'node_quantile:kubelet_pleg_relist_duration_seconds:histogram_quantile',

@@ -3,12 +3,14 @@
     kubeStateMetricsSelector: 'job="kube-state-metrics"',
     nodeExporterSelector: 'job="node-exporter"',
     podLabel: 'pod',
+    vmTenant: '0',
   },
 
   prometheusRules+:: {
     groups+: [
       {
         name: 'node.rules',
+        tenant: $._config.vmTenant,
         rules: [
           {
             // This rule results in the tuples (node, namespace, instance) => 1.

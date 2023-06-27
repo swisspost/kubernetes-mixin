@@ -2,7 +2,6 @@
   _config+:: {
     kubeSchedulerSelector: 'job="kube-scheduler"',
     podLabel: 'pod',
-    vmTenant: '0',
   },
 
   prometheusRules+:: {

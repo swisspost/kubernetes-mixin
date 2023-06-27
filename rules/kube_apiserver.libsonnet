@@ -12,8 +12,6 @@
     kubeApiserverReadNamespaceLatency: '5',
     kubeApiserverReadClusterLatency: '30',
     kubeApiserverWriteLatency: '1',
-    vmTenant: '0',
-
   },
 
   prometheusRules+:: {

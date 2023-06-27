@@ -7,6 +7,7 @@
     groups+: [
       {
         name: 'kubernetes-system-kube-proxy',
+        tenant: $._config.vmTenant,
         rules: [
           (import '../lib/absent_alert.libsonnet') {
             componentName:: 'KubeProxy',

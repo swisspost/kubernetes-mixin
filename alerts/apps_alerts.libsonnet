@@ -10,6 +10,7 @@
     groups+: [
       {
         name: 'kubernetes-apps',
+        tenant: $._config.vmTenant,
         rules: [
           {
             expr: |||

@@ -1,7 +1,6 @@
 {
   _config+:: {
     kubeletSelector: 'job="kubelet"',
-    vmTenant: '0',
   },
 
   prometheusRules+:: {

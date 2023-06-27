@@ -3,7 +3,6 @@
     kubeStateMetricsSelector: 'job="kube-state-metrics"',
     nodeExporterSelector: 'job="node-exporter"',
     podLabel: 'pod',
-    vmTenant: '0',
   },
 
   prometheusRules+:: {

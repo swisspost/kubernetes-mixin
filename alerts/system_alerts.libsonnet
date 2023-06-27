@@ -8,6 +8,7 @@
     groups+: [
       {
         name: 'kubernetes-system',
+        tenant: $._config.vmTenant,
         rules: [
           {
             alert: 'KubeVersionMismatch',

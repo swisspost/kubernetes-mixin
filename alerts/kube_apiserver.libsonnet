@@ -14,6 +14,7 @@ local utils = import '../lib/utils.libsonnet';
     groups+: [
       {
         name: 'kube-apiserver-slos',
+        tenant: $._config.vmTenant,
         rules: [
           {
             alert: 'KubeAPIErrorBudgetBurn',
@@ -45,6 +46,7 @@ local utils = import '../lib/utils.libsonnet';
       },
       {
         name: 'kubernetes-system-apiserver',
+        tenant: $._config.vmTenant,
         rules: [
           {
             alert: 'KubeClientCertificateExpiration',

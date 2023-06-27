@@ -21,6 +21,7 @@
     groups+: [
       {
         name: 'kubernetes-resources',
+        tenant: $._config.vmTenant,
         rules: [
           {
             alert: 'KubeCPUOvercommit',

@@ -2,7 +2,6 @@
   _config+:: {
     cadvisorSelector: 'job="cadvisor"',
     kubeStateMetricsSelector: 'job="kube-state-metrics"',
-    vmTenant: '0',
   },
 
   prometheusRules+:: {

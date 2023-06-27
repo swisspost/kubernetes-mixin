@@ -15,6 +15,7 @@
     groups+: [
       {
         name: 'kubernetes-storage',
+        tenant: $._config.vmTenant,
         rules: [
           {
             alert: 'KubePersistentVolumeFillingUp',

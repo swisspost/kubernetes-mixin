@@ -16,6 +16,7 @@
     groups+: [
       {
         name: 'kubernetes-system-kubelet',
+        tenant: $._config.vmTenant,
         rules: [
           {
             expr: |||

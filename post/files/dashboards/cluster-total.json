@@ -1638,7 +1638,7 @@
             "multi": false,
             "name": "cluster",
             "options": [ ],
-            "query": "label_values(up{job=\"kubernetes-cadvisor\"}, cluster)",
+            "query": "label_values(up{job=\"kubernetes-nodes-cadvisor\"}, cluster)",
             "refresh": 2,
             "regex": "",
             "sort": 0,

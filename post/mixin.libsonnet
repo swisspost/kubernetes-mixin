@@ -8,6 +8,8 @@ kubernetes {
     nodeExporterSelector: 'job="prometheus-node-exporter"',
     kubeApiserverSelector: 'job="kubernetes-apiservers"',
     kubeletSelector: 'job="kubernetes-nodes"',
+    kubeControllerManagerSelector: 'job="kubernetes-nodes"',
+    showMultiCluster: true,
     vmTenant: '0',
     grafanaK8s+:: {
       dashboardNamePrefix: 'mixin / ',
